@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Lato:wght@100;300;400;700;900&display=swap');
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+  body{
+    font-family: 'Caveat', cursive;
+font-family: 'Lato', sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4{
+    text-align: center;
+  }
+  h1 {
+	font-size: 5rem;
+	font-weight: 300;
+    line-height: 1.2;
+    padding-bottom: 1.5rem;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    font-weight: bold;
+}
+.recipe__nav__container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+}
+  /* Book styling */
+main {
+	display: flex;
+	justify-content: center;
+	background-color: #d9d9d9;
+}
+
+.book {
+	--book-height: 70vh;
+	--book-ratio: 1.4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+    box-shadow: -0px 10px 5px -3px rgba(0,0,0,0.1);
+}
+
+.book > div {
+	height: var(--book-height);
+	width: calc(var(--book-height) / var(--book-ratio));
+	overflow: auto;
+	background-color: #0a0a0a;
+	transform: scale(0.9);
+	border-radius: 6px;
+	transform-origin: left;
+    box-shadow: rgba(0, 0, 0, 0.1) -17px 10px 15px -3px;
+
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 768px) {
+	.book {
+		--book-height: 50vh;
+		--book-ratio: 1;
+	}
+	h1 {
+		font-size: 48px;
+	}
+	h2 {
+		font-size: 12px;
+	}
+	h3 {
+		padding: 15px;
+	}
+	p {
+		padding: 0px 15px 5px 15px;
+		font-size: 12px;
+	}
+}
+
+.book-cover {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	z-index: 9;
+	text-align: center;
+    background: -webkit-linear-gradient(left, #559ad4 0%, #559ad4 1%, rgba(255,255,255,0) 3%), -webkit-linear-gradient(-45deg, #52A5EA 0%,#3B8FD6 46%,#2A7DC2 90%,#3E97E4 100%);
+    background:    -moz-linear-gradient(left, #559ad4 0%, #559ad4 1%, rgba(255,255,255,0) 3%),    -moz-linear-gradient(-45deg, #52A5EA 0%,#3B8FD6 46%,#2A7DC2 90%,#3E97E4 100%);
+    background:      -o-linear-gradient(left, #559ad4 0%, #559ad4 1%, rgba(255,255,255,0) 3%),      -o-linear-gradient(-45deg, #52A5EA 0%,#3B8FD6 46%,#2A7DC2 90%,#3E97E4 100%);
+	background-size: cover;
+	background-color: #232323;
+	color: white;
+	transition: transform 2s;
+}
+
+
+.book-content {
+	background-color: white !important;
+}
+
+.book-content h3,
+.book-content p {
+	opacity: 0;
+	transition: all 0.3s 0.3s;
+}
+
+h3 {
+	padding: 30px;
+}
+
+p {
+	padding: 0px 30px 10px 30px;
+	text-align: justify;
+	font-size: 14px;
+}
+
+.book-cover > div {
+	transition: opacity 0s 0.6s;
+}
+
+.book:hover > .book-cover {
+	transform: rotateY(180deg) scale(0.9);
+}
+
+.book:hover > .book-cover > div {
+	opacity: 0;
+}
+
+.book:hover > .book-content {
+	transform: scale(0.9) translateY(0px);
+}
+
+.book:hover > .book-content h3,
+.book:hover > .book-content p {
+	opacity: 1;
+}
+
+
+/* Recipe page styling */
+.header__container,
+.ingredients__container,
+.directions__container{
+    padding: 2rem;
+    margin: auto;
+    max-width: 800px;
+}
+img{
+    margin: auto;
+}
+li{
+    padding-bottom: 1rem;
+}
+li > span{
+    display: block;
+    font-weight: bold;
+}
+
